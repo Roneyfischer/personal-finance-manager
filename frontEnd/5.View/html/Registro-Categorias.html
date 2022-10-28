@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fivil - Gestão Financeira</title>
+
+    <link rel="stylesheet" href="../css/styleInicial.css">
+
+
+
+</head>
+
+<body>
+    <a href="Index.html">Extrato e Registros</a> <br />
+    <a href="Pesquisa.html">Pesquisa</a> <br />
+    <a href="Registro-Categorias.html">Registro de Categorias</a> <br />
+    <a href="Registro-Carteiras.html">Registro de Carteiras</a><br />
+    <a href="userRegister.html">Cadastro de Usuário</a><br />
+    <a href="userLogin.html">Cadastro de Usuário</a><br />
+
+
+    <div class="cabecalho">
+
+        <h1>Fivil</h1>
+        <p id="abaixoDoH1">Sistema de Gerenciamento Financeiro</p>
+        <p id="abaixoDoH1">A <em><strong>facilidade</strong></em> dos sistemas, com a
+            <em><strong>versatilidade</strong></em> das planilhas
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="extrato">
+
+        <div id="campos" class="campos">
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+            <!-- <h3>Registro de Gastos</h3> -->
+
+
+            <h3>Cadastro de Categorias:</h3>
+ 
+
+
+
+            <p>
+            </p>
+            <div id="inputsId">
+
+                <p>
+                    <input type="text" class="inputsClass" id="entradaCadastroCategoria"
+                        placeholder="Nome da Categoria">
+
+
+
+
+
+                    <select class="inputsClass" id="inputSelectCategoria" placeholder="" value="" required>
+
+                    </select>
+
+                </p><br />
+                <button id="btt_Registro-Cat" class="buttons"
+                    onclick="fRegistroCat(entradaCadastroCategoria.value, 'Categoria')">Registrar</button>
+
+
+
+
+            </div>
+
+            <script>
+
+            </script>
+
+
+
+
+        </div>
+        <table id="tabelaExtrato" class="tabelaExtratoClass">
+
+            <thead class="cabecalhoExtratoClass">
+
+                <tr class="linhaCabecalhoClass">
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Id Interno</th>
+                    <th>Data de Registro</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+
+
+            <tbody id="tabelaBody" class="corpoExtrato">
+
+            </tbody>
+
+            <tfoot>
+
+            </tfoot>
+
+
+        </table>
+
+    </div>
+
+
+    <div id="resultadoVazio">
+    </div>
+
+
+
+    <script>
+
+        /*PRÓXIMOS PASSOS:
+        0. Campo de CheckBox para excluir ou editar gastos
+        1. pesquisa com apenas parte da palavra - OK
+        2. Exibir em coluna, estilo planilha
+        3. Fazer aba para escolher entre as categorias
+        4. Fazer página de cadastro de categorias
+        5. Utilizar sistema de calendário para data
+        6. */
+
+
+    </script>
+
+<script src="../../2.Controller/variaveisGerais.js"></script>
+<script src="../../2.Controller/Cadastros/post-cadastro-carteira.js"></script>
+<script src="../../2.Controller/Cadastros/post-cadastro-categoria.js"></script>
+<script src="../../2.Controller/Registro/post-registro-Geral 2.js"></script>
+<script src="../../2.Controller/Operadores/2.btt_Registro.js"></script>
+<script src="../../2.Controller/Operadores/3.btt_Pesquisa..js"></script>
+<script src="../../2.Controller/Operadores/4.criar btt_Excluir.js"></script>
+<script src="../../2.Controller/Operadores/5.btt_Cadastro-Cat.js"></script>
+<script src="../../2.Controller/Operadores/6.Validador-Botoes.js"></script>
+<script src="../../2.Controller/Operadores/7.btt_Edicao.js"></script>
+<script src="../../3.Model/gestao-registros/bdd/storage.js" ></script>
+<script src="../../3.Model/gestao-registros/bdd/recuperacao-arquivos.js" ></script>
+
+
+
+
+
+</body>
+
+</html>

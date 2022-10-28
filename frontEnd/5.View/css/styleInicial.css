@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+@media (min-width:320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+
+
+
+
+    html,
+    body {
+
+
+        background-color: rgb(255, 255, 255);
+
+
+    }
+
+
+    .cabecalho {
+
+        background-color: aliceblue;
+        width: 100%;
+        height: 90px;
+        padding: 2px;
+        padding-left: 5px;
+
+    }
+
+    h1 {
+
+        margin: 0%;
+        padding: 0.5;
+        padding-bottom: 0%;
+        margin: 0%;
+    }
+
+
+    #abaixoDoH1 {
+
+        text-align: center;
+        padding: 0%;
+        margin: 0%;
+
+    }
+
+    p {
+
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.5;
+
+
+    }
+
+    .extrato {
+
+
+        background-color: rgb(255, 254, 254);
+        width: 100%;
+
+        /* padding: 1%; */
+        margin-left: 0%;
+
+
+
+    }
+
+    .campos {
+
+        position: sticky;
+        top: 0px;
+
+        white-space: normal;
+
+        margin-top: 30px;
+        margin-left: 70px;
+        margin-right: 70px;
+        height: 125px;
+        padding: 10px;
+
+
+        text-align: center;
+
+
+        border-radius: 10px;
+
+
+        background-color: rgb(248, 248, 248);
+
+
+    }
+
+
+    #inputsId {
+
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .inputsClass {
+        border-radius: 10px;
+        height: 35px;
+        width: 150px;
+        padding-left: 11px;
+
+    }
+    .inputIdClass {
+        border-radius: 10px;
+        height: 35px;
+        width: 150px;
+        padding-left: 11px;
+
+    }
+
+    .inputsClassPesquisa  {
+        border-radius: 10px;
+        height: 35px;
+        width: 150px;
+        padding-left: 11px;
+
+    }
+    
+
+   .buttons {
+        background-color: rgba(0, 0, 139);
+        width: 150px;
+        height: 35px;
+        color: white;
+        border-radius: 10px;
+        border: 0px;
+        margin: 1px;
+
+        cursor: pointer;
+        font-size: 16px;
+        font-style: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .buttons:enabled:active{
+        transform: scale(0.95);
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .buttons:enabled:hover {
+        transform: scale(0.99);
+        background-color: rgb(4, 4, 122);
+
+    }
+
+    .buttons:enabled:hover {
+        transform: scale(0.99);
+        background-color: rgb(4, 4, 122);
+
+    }
+
+    .buttons:disabled {
+        background-color: dimgrey;
+        cursor: default;
+
+    }
+
+    .buttons:disabled:active {
+        background-color: dimgrey;
+        cursor: default;
+
+    }
+
+    .buttons:disabled:hover {
+        background-color: dimgrey;
+        
+
+    }
+
+    #tabelaSomatoria {
+
+        padding-left: 70px;
+        padding-right: 70px;
+        text-align: center;
+        width: 100%;
+        padding-top: 20px;
+        
+      
+    }
+
+
+    #tabelaExtrato {
+
+        padding-left: 70px;
+        padding-right: 70px;
+        text-align: center;
+        width: 100%;
+        padding-top: 20px;
+        
+      
+    }
+    .linhaSomatoria {
+
+        background-color: rgb(12, 123, 86);
+        color: rgb(255, 255, 255);
+    }
+
+    #nomeResultadoSomatoria {
+
+        width: 500px;
+  
+    }
+
+    #resultadoSomatoria {
+
+        width: 200px;
+  
+    }
+
+
+    tbody {
+
+        padding-top: 75px;
+        padding-left: 50x;
+        background-color: rgb(218, 218, 218);
+
+    }
+
+    thead, .linhaRodapeClass {
+
+        background: rgb(0, 0, 0);
+        color: white;
+
+    }
+
+    td,
+    th {
+        
+        text-align: center;
+        padding: 8px;
+        
+    }
+
+   
+
+    tr:hover {
+
+        background-color: rgb(144, 144, 144);
+        transform: scale(1.02);
+
+        color: white;
+        font-style: bold;
+
+        cursor: pointer;
+
+
+    }
+
+
+
+
+
+
+
+}
+
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal .content {
+    background-color: #D3D3D3;
+    margin: 300px auto; 
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'LexendDeca-Regular';
+    color: var(--title);
+    
+
+    border-radius: 10px;
+
+
+    background-color: rgb(248, 248, 248);
+    
+}
+
+
+/********************************************DAQUI PRA CIMA É CELULAR***********************************/
+
+
+@media (min-width:480px) {
+
+    /* smartphones, Android phones, landscape iPhone */
+    h1 {
+        color: blue
+    }
+
+    ;
+
+}
+
+@media (min-width:600px) {
+
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    h1 {
+        color: orange
+    }
+}
+
+@media (min-width:801px) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    h1 {
+        color: pink
+    }
+}
+
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+
+}
+
+@media (min-width:1281px) {
+
+    /* hi-res laptops and desktops */
+    h1 {
+        color: white
+    }
+
+}

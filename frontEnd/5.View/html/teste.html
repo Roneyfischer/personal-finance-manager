@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function checkCookie() {
+        // Cria uma nova data no futuro 01/01/2020
+        var data = new Date(2020, 0, 01);
+        // Converte a data para GMT
+        // Wed, 01 Jan 2020 02:00:00 GMT
+        data = data.toGMTString();
+        // Cria o cookie
+        document.cookie = "nome=João; expires=" + data + "; path=/";
+        document.cookie =
+          "sobrenome=Miranda Figueiredo; expires=" + data + "; path=/";
+        document.cookie = "apelido=Joãozinho; expires=" + data + "; path=/";
+      }
+    </script>
+  </head>
+  <body onload="checkCookie()"></body>
+</html>

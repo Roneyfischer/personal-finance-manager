@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fivil - Gestão Financeira</title>
+
+
+    <link rel="stylesheet" href="../css/styleInicial.css">
+
+
+
+</head>
+
+<body>
+
+    <a href="Index.html">Extrato e Registros</a> <br />
+    <a href="Pesquisa.html">Pesquisa</a> <br />
+    <a href="Registro-Categorias.html">Registro de Categorias</a> <br />
+    <a href="Registro-Carteiras.html">Registro de Carteiras</a><br />
+    <a href="userRegister.html">Cadastro de Usuário</a><br />
+    <a href="userLogin.html">Cadastro de Usuário</a><br />
+
+    <div class="cabecalho">
+
+        <h1>Fivil</h1>
+        <p id="abaixoDoH1">Sistema de Gerenciamento Financeiro</p>
+        <p id="abaixoDoH1">A <em><strong>facilidade</strong></em> dos sistemas, com a
+            <em><strong>versatilidade</strong></em> das planilhas
+        </p>
+
+    </div>
+
+
+
+
+
+    <div class="extrato">
+
+        <div id="campos" class="campos">
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+            <!-- <h3>Registro de Gastos</h3> -->
+
+
+            <h3>Registro de Valores:</h3>
+            <form>
+
+                <input type="radio" name="tipoDeGastoCheckBox" id="checkboxReceita" value="2"> Receitas
+                <input type="radio" name="tipoDeGastoCheckBox" id="checkboxGasto" value="1" checked> Despesas
+
+            </form>
+
+
+
+            <p>
+            </p>
+            <div id="inputsId">
+                <form>
+                    <p>
+
+                        <select class="inputsClass" id="inputSelectCarteira" placeholder="" value="" required>
+
+                        </select>
+
+
+                        <input type="text" class="inputsClass" id="entradaNomeProduto" placeholder="Nome do Produto"
+                            required=”true”>
+
+
+
+                        <!-- <select>
+                        <option class="cats" value="123">CATEGORIA 1</option>
+                        <option>Chelan</option>
+                        <option class="cats" value="456">CATEGORIA 2</option>
+                        <option>Chelan</option>
+                    </select> -->
+
+                        <select class="inputsClass" id="inputSelectCategoria" placeholder="" value="" required>
+                            <option value="">Categorias Cadastradas</option>
+                        </select>
+
+
+                        <input class="inputsClass" id="entradaValorProduto" type="text" class="form-control"
+                            onkeypress="$(this).mask('999.999.999.999.999.990,00', {reverse: true})"
+                            placeholder="Preço (R$ 150,00)" value="" required>
+
+                        <input class="inputsClass" type="date" required id="entradaDataProduto"
+                            placeholder="Data (dd/mm/aaaa)" value="" required>
+
+                    </p>
+
+
+                </form>
+                <button id="btt_Registro" class="buttons"
+                    onclick="fRegistro(inputSelectCarteira.value, entradaNomeProduto.value, entradaValorProduto.value, inputSelectCategoria.value, entradaDataProduto.value)">Registrar</button>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <table id="tabelaSomatoria" class="tabelaSomatoriaClass">
+
+            <thead class="cabecalhoSomatoriaClass">
+                <tr class="linhaSomatoria">
+
+                    <th id="nomeResultadoSomatoria" class="resultadoSomatoriaClass">Valor Total</th>
+                    <th id="resultadoSomatoria" class="resultadoSomatoriaClass"></th>
+
+                </tr>
+        </table>
+
+        <table id="tabelaExtrato" class="tabelaExtratoClass">
+
+            <thead class="cabecalhoExtratoClass">
+
+                <tr class="linhaCabecalhoClass">
+                    <th>Carteira</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Id Interno</th>
+                    <th>Data de Registro</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+
+
+            <tbody id="tabelaBody" class="corpoExtrato">
+
+            </tbody>
+
+            <tfoot>
+
+            </tfoot>
+
+
+        </table>
+
+    </div>
+
+
+    <div id="resultadoVazio">
+    </div>
+
+
+
+
+    <div class="modal">
+       
+        <div id="campos2" class="content">
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+            <!-- <h3>Registro de Gastos</h3> -->
+
+
+            <h3>Registro de Valores:</h3>
+            <form>
+
+                <input type="radio" name="tipoDeGastoCheckBox" id="checkboxReceita2" value="2"> Receitas
+                <input type="radio" name="tipoDeGastoCheckBox" id="checkboxGasto2" value="1" checked> Despesas
+
+            </form>
+
+
+
+            <p>
+            </p>
+            <div id="inputsId2">
+                <form>
+                    <p>
+
+                        <select class="inputsClass" id="inputSelectCarteira2" placeholder="" value="" required>
+
+                        </select>
+
+
+                        <input type="text" class="inputsClass" id="entradaNomeProduto2" placeholder="Nome do Produto"
+                            required=”true”>
+
+
+                        <select class="inputsClass" id="inputSelectCategoria2" placeholder="" value="" required>
+                            
+                        </select>
+
+
+                        <input class="inputsClass" id="entradaValorProduto2" type="text" class="form-control"
+                            onkeypress="$(this).mask('999.999.999.999.999.990,00', {reverse: true})"
+                            placeholder="Preço (R$ 150,00)" value="" required>
+
+                        <input class="inputsClass" type="date" required id="entradaDataProduto2"
+                            placeholder="Data (dd/mm/aaaa)" value="" required>
+
+                    </p>
+
+
+                </form>
+                <button id="btt_Registro2" class="buttons"
+                    onclick="fRegistro(inputSelectCarteira2.value, entradaNomeProduto2.value, entradaValorProduto2.value, inputSelectCategoria2.value, entradaDataProduto2.value)">Alterar</button>
+
+            </div>
+
+
+
+
+
+
+        </div>
+            
+
+        
+      </div>
+
+
+
+
+
+
+
+    <script>
+
+        /*PRÓXIMOS PASSOS:
+        0. Campo de CheckBox para excluir ou editar gastos
+        1. pesquisa com apenas parte da palavra - OK
+        2. Exibir em coluna, estilo planilha
+        3. Fazer aba para escolher entre as categorias
+        4. Fazer página de cadastro de categorias
+        5. Utilizar sistema de calendário para data
+        6. */
+
+ 
+    </script>
+<script src="../../2.Controller/variaveisGerais.js"></script>
+<script src="../../2.Controller/Cadastros/post-cadastro-carteira.js"></script>
+<script src="../../2.Controller/Cadastros/post-cadastro-categoria.js"></script>
+<script src="../../2.Controller/Registro/post-registro-Geral 2.js"></script>
+<script src="../../2.Controller/Operadores/1.a-btt_Registro.js"></script>
+<script src="../../2.Controller/Operadores/3.btt_Pesquisa..js"></script>
+<script src="../../2.Controller/Operadores/4.criar btt_Excluir.js"></script>
+<script src="../../2.Controller/Operadores/5.btt_Cadastro-Cat.js"></script>
+<script src="../../2.Controller/Operadores/6.Validador-Botoes.js"></script>
+<script src="../../2.Controller/Operadores/7.btt_Edicao.js"></script>
+<script src="../../3.Model/gestao-registros/bdd/storage.js" ></script>
+<script src="../../3.Model/gestao-registros/bdd/recuperacao-arquivos.js" ></script>
+<script src="../../3.Model/gestao-registros/Operadores-model/1.b-operador-Registro.js" ></script>
+<script src="../../2.Controller/Exibidores/1.c-view-Registers.js" ></script>
+
+
+
+
+
+</body>
+
+</html>
