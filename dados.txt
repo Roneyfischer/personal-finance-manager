@@ -1,1 +1,2 @@
 ssh -i "pKeyOneAws.pem" ubuntu@ec2-52-67-237-18.sa-east-1.compute.amazonaws.com
+token: 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
